@@ -24,7 +24,7 @@ int ncr(int n, int r)
   b = final*run;
   result = prod/b;
   return result;*/
-  int factorial(int n) 
+ int factorial(int n) 
 {
     int factorial = 1;
     for (int i = n; i >= 1; i--)
@@ -32,6 +32,7 @@ int ncr(int n, int r)
     return factorial;
   }
   return factorial(n) / (factorial(r) * factorial(n - r));
+   
   
 }
 void output(int n, int r, int result)
