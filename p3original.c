@@ -5,7 +5,7 @@ int input_n_and_r(int *n, int *r)
   scanf("%d %d", n , r);
 }
 int ncr(int n, int r)
-{ int i, result ,b,final = 1; 
+{ /*int i;// result ,b,final = 1; 
   int prod =1;
   int run = 1;
   int a = (n-r);
@@ -23,7 +23,15 @@ int ncr(int n, int r)
     }
   b = final*run;
   result = prod/b;
-  return result;
+  return result;*/
+  int factorial(int n) 
+{
+    int factorial = 1;
+    for (int i = 2; i <= n; i++)
+        factorial = factorial * i;
+    return factorial;
+  }
+  return factorial(n) / (factorial(r) * factorial(n - r));
   
 }
 void output(int n, int r, int result)
