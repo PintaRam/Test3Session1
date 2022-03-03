@@ -28,9 +28,13 @@ float evaluate_polynomial(int n, float a[n], float x)
     }
   return result;
 }
-void out_put(/*int n, float a[n], float x,*/ float result)
-{
-  printf("%f\n",result);
+void out_put(int n, float a[n], float x, float result)
+{ int i ;
+  for(i=0;i<=n;i++)
+    { 
+      printf("%f*X^ %d+", a[i],i);
+    }
+  printf("at %f is = %f\n",x,result);
 }
 int main()
 {
@@ -41,6 +45,6 @@ int main()
   x =  input_x();
    input_coefficients(n,  a);
 result =  evaluate_polynomial( n, a,x);
-   out_put(result);
+   out_put(n,a,x,result);
   return 0;
 }

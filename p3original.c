@@ -5,7 +5,7 @@ int input_n_and_r(int *n, int *r)
   scanf("%d %d", n , r);
 }
 int ncr(int n, int r)
-{ /*int i, result ,b,final = 1; 
+{ /*int i, result,b,final = 1; 
   int prod =1;
   int run = 1;
   int a = (n-r);

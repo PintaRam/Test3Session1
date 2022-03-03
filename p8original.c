@@ -14,13 +14,13 @@ int find_gcd(int a, int b)
     }
   return a;
 }
-int input_fraction()
+int input_n()
 { int n;
   printf("enter the number of fraction to be added\n");
   scanf("%d",&n);
   return n;
 }
-void input_in_fractions(int n, Fraction f[n])
+void input_n_fractions(int n, Fraction f[n])
 { 
   Fraction input()
 {
@@ -64,16 +64,17 @@ void output(int n, Fraction f[n], Fraction sum)
   for(i=0;i<n;i++)
     {
       printf("%d/%d+\t",f[i].num,f[i].den);
+      printf("%d/%d\t",f[i].num,f[i].den);
     }
- // printf("%d/%d+",f[i].num,f[i].den);
-  printf("\n %d/%d",sum.num,sum.den);
+  
+  printf("\n = %d/%d",sum.num,sum.den);
   
 }
 int main()
 { int n;
-n = input_fraction();
+n = input_n();
   Fraction f[n],sum;
-input_in_fractions(n, f);
+input_n_fractions(n, f);
 sum =  add_n_fractions( n ,f );
 output(n,f,sum);
     return 0;
