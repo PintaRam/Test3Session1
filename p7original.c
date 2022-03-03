@@ -14,8 +14,34 @@ int find_gcd(int a, int b)
     }
   return a;
 }
+Fraction input_fraction()
+{
+  Fraction f;
+  printf("enter the farction\n");
+  scanf("%d%d",&f.num,&f.den);
+  return f;
+}
+Fraction add_fractions(Fraction f1, Fraction f2)
+{
+  Fraction sum;
+  sum.num = f1.num*f2.den + f2.num*f1.den;
+  sum.den = f1.den*f2.den;
+  int g = find_gcd(sum.num , sum.den);
+  sum.num = sum.num/g;
+  sum.den = sum.den/g;
+  return sum;
+    
+    }
+void output(Fraction f1, Fraction f2, Fraction sum)
+{
+  printf("sum of (%d/%d) + (%d/%d) = %d/%d\n",f1.num,f1.den, f2.num,f2.den, sum.num,sum.den);
+}
 int main()
 { 
-  printf("%d\n",find_gcd(24,4));
-  return 0;
+Fraction f1,f2,f;
+f1= input_fraction();
+f2= input_fraction();
+ f =add_fractions( f1,  f2);
+    output(f1,f2,f);
+    return 0;
 }
