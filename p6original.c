@@ -3,25 +3,33 @@
 void input_string(char *a)
 {
   printf("enter the string \n");
-  scanf("%s",a);
+  scanf("%[^\n]s",a);
 }
 void count_words(char *string)
-{ char delim[] = " ,.!;:\n";    
-	char *words, *ptr;
-	
-	int count = 0;
-        ptr= string;
-	
-	while ((words = strtok(ptr, delim)) !=NULL)   
-	      {printf("\n%s\n",words);
-	       count++;
-	       ptr = NULL; 
-	      }
-  printf("there were %d words in the string \n",count); 
+{ 
+ 
+  char* word;
+  int i=0;
+  string[strcspn(string, "\n")] = 0;
+
+  word=strtok(string, " ,\".-");
+
+  while( word != NULL)
+  {
+      printf("%s ", word);
+      word=strtok(NULL, " ,\".-");
+      i++;
+
+  }
+
+   printf("there were %d words in the string \n",i); 
+
+
+
 	       
 }
 
-//output()
+
 
 
 
@@ -32,11 +40,11 @@ void count_words(char *string)
 
 int main()
 {
-  char string[100] ;
-  int words;
+  char string[1000];
+  
   input_string(string);
-  count_words(string);
+ count_words(string);
 // output(string,  words);
-
+  
      
 }
