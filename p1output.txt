@@ -1,1 +1,138 @@
+ gcc  -g p1original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8c6: file p1original.c, line 30.
+(gdb) r
+Starting program: /home/runner/Test3Session1-3/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p1original.c:30
+30  {
+(gdb) n
+32    input(&num1, &den1, &num2, &den2);
+(gdb) s
+input (num1=0x7ffc6d96f4f0, den1=0x7ffc6d96f4f4, num2=0x7ffc6d96f4f8, 
+    den2=0x7ffc6d96f4fc) at p1original.c:4
+4     printf("enter the value of first fraction\n");
+(gdb) n
+enter the value of first fraction
+5     scanf("%d %d",num1,den1);
+(gdb) n
+1
+3
+6     printf("enter the value of second fraction\n");
+(gdb) n
+enter the value of second fraction
+7     scanf("%d %d",num2,den2);
+(gdb) n
+3
+4
+9   }
+(gdb) n
+main () at p1original.c:33
+33    add(num1, den1, num2, den2, &num3, &den3);
+(gdb) s
+add (num1=1, den1=3, num2=3, den2=4, num3=0x7ffc6d96f500, den3=0x7ffc6d96f504)
+    at p1original.c:12
+12    x = (num1*den2) + (num2*den1);
+(gdb) n
+13    y = den1*den2;
+(gdb) n
+14    for(int i=1; i <= x && i <= y; i++)
+(gdb) n
+17          if(x%i==0 && y%i==0)
+(gdb) n
+18              gcd = i;
+(gdb) n
+14    for(int i=1; i <= x && i <= y; i++)
+(gdb) n
+17          if(x%i==0 && y%i==0)
+(gdb) n
+14    for(int i=1; i <= x && i <= y; i++)
+(gdb) n
+17          if(x%i==0 && y%i==0)
+(gdb) n
+14    for(int i=1; i <= x && i <= y; i++)
+(gdb) n
+17          if(x%i==0 && y%i==0)
+(gdb) n
+14    for(int i=1; i <= x && i <= y; i++)
+(gdb) n
+17          if(x%i==0 && y%i==0)
+(gdb) n
+14    for(int i=1; i <= x && i <= y; i++)
+(gdb) n
+17          if(x%i==0 && y%i==0)
+(gdb) n
+14    for(int i=1; i <= x && i <= y; i++)
+(gdb) n
+17          if(x%i==0 && y%i==0)
+(gdb) n
+14    for(int i=1; i <= x && i <= y; i++)
+(gdb) n
+17          if(x%i==0 && y%i==0)
+(gdb) n
+14    for(int i=1; i <= x && i <= y; i++)
+(gdb) n
+17          if(x%i==0 && y%i==0)
+(gdb) n
+14    for(int i=1; i <= x && i <= y; i++)
+(gdb) n
+17          if(x%i==0 && y%i==0)
+(gdb) n
+14    for(int i=1; i <= x && i <= y; i++)
+(gdb) n
+17          if(x%i==0 && y%i==0)
+(gdb) n
+14    for(int i=1; i <= x && i <= y; i++)
+(gdb) n
+17          if(x%i==0 && y%i==0)
+(gdb) 
+14    for(int i=1; i <= x && i <= y; i++)
+(gdb) n
+20    *num3 = x/gcd;
+(gdb) n
+21    *den3 = y/gcd;
+(gdb) n
+24  }
+(gdb) n
+main () at p1original.c:34
+34   output(num1, den1, num2, den2, num3, den3);
+(gdb) s
+output (num1=1, den1=3, num2=3, den2=4, num3=13, den3=12) at p1original.c:27
+27    printf("sum of %d/%d + %d/%d = %d/%d ",num1,den1,num2,den2,num3,den3);
+(gdb) n
+28  }
+(gdb) n
+main () at p1original.c:35
+35    return 0;
+(gdb) n
+36  }
+(gdb) n
+__libc_start_main (main=0x55a2e54008be <main>, argc=1, argv=0x7ffc6d96f5f8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffc6d96f5e8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 56] will be killed.
+
+Quit anyway? (y or n) y
+ ^C
+ 
