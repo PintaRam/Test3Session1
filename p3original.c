@@ -25,15 +25,13 @@ int ncr(int n, int r)
   result = prod/b;
   return result;*/
  int factorial(int n) 
-{
+ {
     int factorial = 1;
     for (int i = n; i >= 1; i--)
         factorial = factorial * i;
     return factorial;
   }
-  return factorial(n) / (factorial(r) * factorial(n - r));
-   
-  
+  return factorial(n) / (factorial(r) * factorial(n - r)); 
 }
 void output(int n, int r, int result)
 {

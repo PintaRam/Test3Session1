@@ -22,6 +22,7 @@ int input_n()
 }
 void input_n_fractions(int n, Fraction f[n])
 { 
+  
   Fraction input()
 {
   Fraction f;

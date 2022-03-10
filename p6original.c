@@ -1,50 +1,40 @@
 #include<stdio.h>
 #include<string.h>
+
 void input_string(char *a)
 {
   printf("enter the string \n");
-  scanf("%[^\n]s",a);
+scanf("%[^\n]s",a);
+    
 }
-void count_words(char *string)
+int count_words(char *string)
 { 
  
   char* word;
-  int i=0;
-  string[strcspn(string, "\n")] = 0;
+  int count =0;
+ word=strtok(string, " ,\".-");
 
-  word=strtok(string, " ,\".-");
-
-  while( word != NULL)
+  while( word != 0)
   {
       printf("%s ", word);
-      word=strtok(NULL, " ,\".-");
-      i++;
+      word=strtok(0, " ,\".-");
+      count++;
 
   }
-
-   printf("there were %d words in the string \n",i); 
-
-
-
-	       
+return count;
 }
+void output( int a)
+{
+  printf(" has  %d words in the string \n",  a); 
 
-
-
-
-
-  
-
-
-
-
+}
 int main()
 {
-  char string[1000];
-  
-  input_string(string);
- count_words(string);
-// output(string,  words);
-  
+ char string[1000];
+ int a;
+ input_string(string);
+ a = count_words(string);
+ output(a);
+ return 0; 
      
 }
