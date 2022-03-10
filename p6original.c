@@ -4,7 +4,8 @@
 void input_string(char *a)
 {
   printf("enter the string \n");
-scanf("%[^\n]s",a);
+//scanf("%[^\n]s",a);
+  fgets(a,1000,stdin);
     
 }
 int count_words(char *string)
